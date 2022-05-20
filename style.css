@@ -1,0 +1,728 @@
+/*======Variables======*/
+
+:root {
+    --cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    --dark-gray: hsl(0, 0%, 48%);
+}
+
+
+/*======Resets======*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Commissioner', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    border-bottom: .5px solid white;
+}
+
+button{
+    border-style: none;
+}
+
+
+/*======Layout======*/
+
+.container{
+    position: relative;
+    padding: 0 1.5em 5em;
+}
+
+@media (min-width: 835px){
+    .container{
+        padding: 0 10em 7.75em;
+    }
+}
+
+/*======Navbar======*/
+
+navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.nav-items{
+    gap: 2em;
+}
+
+@media (max-width: 835px){
+    .nav-items{
+        position: fixed;
+        top: 3em;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+        background-color: white;
+        font-size: 1.25em;
+        border-radius: 8px;
+        z-index: 20;
+    }
+
+    .nav-items > li {
+        border-bottom: 1px solid #7A7A7A;
+        padding: 1.25em;
+    }
+
+    .nav-items > li > a {
+        color: black;
+        font-size: 1.125em;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 835px){
+    navbar{
+        padding-top: 3em;
+    }
+}
+
+.nav-shadow{
+    position: fixed;
+    top: 0;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+
+/*======Hero Image======*/
+
+body{
+    background-color: #F2F2F2;
+    background-image: url("/images/image-hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (min-width: 835px){
+    body{
+        background-image: url("/images/image-hero-desktop.jpg"); 
+    }
+}
+
+/*======CTA Section======*/
+
+.cta-section{
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: white;
+    padding: 3.25em 1.5em 2.5em;
+    border-radius: 8px;
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+@media (min-width: 835px){
+    .cta-section{
+        max-width: 730px;
+    }
+}
+
+.cta-logo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+h1{
+    font-size: 1.25em;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 70%;
+}
+
+.cta-section-paragraph{
+    font-size: 0.875em;
+    color: var(--dark-gray);
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.cta-btns{
+    display:flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.cta{
+    flex: 3;
+    background-color: var(--cyan);
+    border-radius: 33.5px;
+    color: white;
+    font-weight: 700;
+    padding: 1em 2.5em;
+    
+}
+
+.bookmark{
+    flex: 1;
+}
+
+@media (min-width: 835px){
+    h1{
+        font-size: 1.75em;
+        margin-bottom: .5em;
+    }
+
+    .cta-section-paragraph{
+        font-size: 1em;
+    }
+
+    .cta-btns{
+        width: 100%;
+        align-items: center;
+    }
+
+    .cta{
+        flex: initial;
+    }
+
+    .bookmark-btn-div{
+        display: flex;
+        position: relative;
+    }
+
+    .bookmark {
+        display: none;
+    }
+
+    .bookmark-desktop{
+        position: absolute;
+        left: 0;
+        transform: translate(-25%) scale(1.1);
+        flex: initial;
+    }
+
+    .bookmark-btn{
+        margin-left: auto;
+        background-color: #F2F2F2;
+        color: #7A7A7A;
+        font-weight: 700;
+        border-radius: 33.5px;
+        font-weight: 700;
+        padding: 1em 2em 1em 3.5em;
+    }
+}
+
+/*======Info Section======*/
+
+.info-section{ 
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin-top: 1.5em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.info-section-div{
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5em;
+    justify-content: space-between;
+}
+
+@media (min-width: 835px){
+    .info-section{
+        max-width: 730px;
+        margin-top: 1em;
+    }
+}
+
+.number-info{
+    font-size: 0.5em;
+    font-weight: 400;
+    color: var(--dark-gray)
+}
+
+hr{
+    width: 80px;
+}
+
+.progress-div{
+    width: 100%;
+    height: 12px;
+}
+
+.progress{
+    position: relative;
+    width: 100%;
+    height: 12px;
+    border-radius: 33.5px;
+    background-color: #F2F2F2;
+}
+
+.current{
+    position: absolute;
+    width: 70%;
+    height: 12px;
+    border-radius: 33.5px;
+    background-color: var(--cyan);
+}
+
+@media (min-width: 835px){
+    .info-section-div{
+        flex-direction: row;
+        gap: .25em;
+    }
+    
+    hr{
+        transform: rotate(90deg);
+        width: 70px
+    }
+}
+
+/*======Detail Section======*/
+
+.detail-section{
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin-top: 1.5em;
+}
+
+@media (min-width: 835px){
+    .detail-section{
+        max-width: 730px;
+    }
+}
+
+.about{
+    margin-bottom: 2em;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 1.125em;
+    margin-bottom: 1em;
+}
+
+.about-paragraph {
+    font-size: 0.875em;
+    color: #7A7A7A;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 835px){
+    h2{
+       font-size: 1.25em;
+    }
+
+    .about-paragraph{
+        font-size: 1em;
+    }
+}
+
+/*======Pledge Card======*/
+
+.pledge-tier{
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin-top: 1.5em;
+    border: .5px solid #7A7A7A;
+    border-radius: 8px;
+    font-size: 0.875em;
+}
+
+h3{
+    font-weight: 700;
+}
+
+.pledge-amount {
+    color: var(--cyan);
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 1em;
+}
+
+.tier-info{
+    color: #7A7A7A;
+    line-height: 24px;
+    margin-bottom: 1.5em;
+}
+
+.number-left{
+    font-weight: bold;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-bottom: 0;
+}
+
+.number-left > span {
+    font-size: .5em;
+    font-weight: 400;
+    color: #7A7A7A;
+}
+
+.pledge-button{
+    border-style: none;
+    background-color: var(--cyan);
+    border-radius: 33.5px;
+    color: white;
+    font-weight: 700;
+    padding: 1em 1.5em;
+    margin-top: 1em;
+}
+
+
+.sold-out{
+    opacity: .5;
+}
+
+.oos{
+    background-color:hsl(0, 0%, 48%);
+}
+
+@media (min-width: 835px){
+    .pledge-tier{
+        padding: 2.375em 2em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    .pledge-amount{
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+
+    .pledge-top,
+    .pledge-bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pledge-top{
+        margin-bottom: 1em;
+    }
+
+    .number-left{
+        margin-bottom: 0;
+    }
+}
+
+
+/*======Modal======*/
+
+.backing-modal{
+    position: absolute;
+    top: 7.5em;
+    left: 50%;
+    transform: translate(-50%, 0); /* Why does this work? */
+    padding: 2em 1.5em;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 730px;
+    width: 93%; /* Is that okay? How else could you do this? */
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.modal-header > h3 {
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+.backing-modal > p {
+    font-size: 0.875em;
+    color: #7A7A7A;
+}
+
+.modal-card{
+    position: relative;
+    margin-top: 1.5em;
+    border: .5px solid #7A7A7A;
+    border-radius: 8px;
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 1.5em 0;
+}
+
+.pledge-amount {
+    margin-bottom: 0;
+}
+
+.card-body{
+    padding: 2em 1.5em;
+}
+
+.card-body > p,
+.card-bottom > p {
+    color: #7A7A7A;
+}
+
+.card-body > .pledge-bottom{
+    margin-top: 1em;
+}
+
+input[type="radio"]{
+    background-color: #fff;
+    margin: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid #7A7A7A;
+  }
+
+.card-bottom{
+    display: flex;
+    padding: 2em 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+    border-top: 1px solid #7a7a7a89;
+}
+
+.bottom-btns{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    width: 40%;
+}
+
+.bottom-btns > .pledge-button{
+    margin-top: 0;
+}
+
+.bottom-btns > input {
+    width: 50%;
+    padding: .9em 1.4em .9em 2em;
+    border-radius: 33px;
+    border-style: none;
+    border: 1px solid var(--cyan);
+    font-weight: 700;
+}
+
+.bottom-btns > input:focus{
+    outline: none;
+}
+
+.bottom-btns > p {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #7A7A7A;
+    position: absolute;
+    left: 1.5em;
+}
+
+.shadow-realm{
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      height: 100%;
+  }
+
+  @media (min-width: 835px){
+      .card-headline{
+          display: flex;
+          flex-direction: row;
+          gap: 1em;
+      }
+
+      .pledge-bottom-modal{
+          position: absolute;
+          top: 28px;
+          right: 1.5em;
+          
+      }
+
+      .pledge-bottom-modal > .number-left{
+        font-size: 1.125em;
+      }
+  }
+
+/*======Success Modal======*/
+
+.success-modal{
+    position: absolute;
+    top: 7.5em;
+    left: 50%;
+    transform: translate(-50%, 0); /* Why does this work? */
+    padding: 2em 1.5em;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 540px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;    
+    text-align: center;
+}
+
+.success-modal > img {
+    width: 90px;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success-modal > h3 {
+    margin-top: 2.5em;
+}
+
+.success-modal > p {
+    color: #7A7A7A;
+    margin-top: 2em;
+}
+
+.got-it{
+    background-color: var(--cyan);
+    border-radius: 33.5px;
+    color: white;
+    font-weight: 700;
+    padding: 1em 2.5em;
+    margin-top: 2em;
+}
+
+/*======Hover/Active states======*/
+
+button:hover,
+.bookmark:hover,
+.bookmark-desktop:hover {
+    cursor: pointer;
+}
+
+.cyan-btn:active{
+    background-color: #147A73;
+}
+
+.bookmark-btn-active{
+    color: #147A73;
+    background-color: #147a731e;
+}
+
+.bookmark-btn-div-active svg circle {
+    fill: var(--dark-cyan);
+}
+
+.bookmark-btn-div-active svg path {
+    fill: #fff;
+}
+
+.close-modal:hover{
+    cursor: pointer;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}
+
+.card-headline:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.modal-card-active {
+    border: 2px solid var(--cyan);
+}
+
+.out-of-stock{
+    opacity: .6;
+}
+
+.no-hover{
+        pointer-events: none;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+/*======Hide======*/
+
+.hide{
+    display: none;
+}
+
+.hide-mobile{
+    display: none;
+}
+
+@media (min-width: 835px){
+    .hide-desktop{
+        display: none;
+    }
+
+    .hide-mobile{
+        display: flex;
+    }
+}
